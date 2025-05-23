@@ -1,16 +1,5 @@
-import hello from "./modulo";
-import "./styles.sass";
+import template from './pages/home.html';
+import { renderPage } from "./js/utils";
+const $content = document.querySelector("#content");
 
-console.log(hello);
-console.log('hello worldsd');
-
-let i = 0;
-while (true) {
-  if (i === 10) {
-    throw new Error('hello');
-  }
-  if (i === 10) {
-    break;
-  }
-  i++;
-}
+$content.appendChild(renderPage(template));
