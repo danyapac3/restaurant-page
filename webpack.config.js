@@ -1,5 +1,6 @@
 const path = require("node:path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { sourceMapsEnabled } = require("node:process");
 
 module.exports = {
   entry: "./src/index.js",
@@ -22,9 +23,19 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        type: "asset/source",
+        use: { 
+          loader: "html-loader",
+          options: { minimize: false }
+        },
         include: path.resolve(__dirname, "src", "pages"),
       },
+      {
+        test: /\.(png|jpg|jpeg)$/i,
+        type: "asset/resource",
+      }
     ]
-  }
+  },
+  resolve: {
+    roots: [path.resolve(__dirname, "src")],
+  },
 }
