@@ -1,4 +1,4 @@
-import template from '/pages/products.html';
+import template from '/pages/contacts.html';
 import { renderPage } from "/js/utils";
 const $content = document.querySelector("#content");
 
