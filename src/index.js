@@ -1,3 +1,5 @@
+import "/styles/index.sass";
+
 import contactsHtml from '/pages/contacts.html';
 import homeHtml from '/pages/home.html';
 import productsHtml from '/pages/products.html';
