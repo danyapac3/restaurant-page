@@ -18,3 +18,6 @@
     $pixel-size * 3 $pixel-size,
     $pixel-size $pixel-size
   )
+
+=shaded-background-image($image, $shading-level)
+  background-image: linear-gradient(rgba(0, 0, 0, $shading-level), rgba(0, 0, 0, $shading-level)), $image
