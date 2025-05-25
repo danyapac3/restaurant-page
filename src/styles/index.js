@@ -1,4 +1,5 @@
 // components
+import "/styles/components/content.sass";
 
 // layout 
 import "/styles/layout/page.sass";
