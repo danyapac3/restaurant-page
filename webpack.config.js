@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { sourceMapsEnabled } = require("node:process");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/js/index.js",
   mode: "development",
   devtool: "eval-source-map",
   output: {
@@ -19,7 +19,16 @@ module.exports = {
     rules: [
       {
         test: /\.sass$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: `@use "/styles/shared" as *\n`,
+            },
+          }
+        ],
       },
       {
         test: /\.html$/i,
@@ -37,5 +46,8 @@ module.exports = {
   },
   resolve: {
     roots: [path.resolve(__dirname, "src")],
+    alias: {
+      "@styles": path.resolve(__dirname, "src/styles"),
+    },
   },
 }

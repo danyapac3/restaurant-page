@@ -1,4 +1,4 @@
-import "/styles/index.sass";
+import "/styles/index";
 
 import contactsHtml from '/pages/contacts.html';
 import homeHtml from '/pages/home.html';
@@ -14,16 +14,16 @@ const pages = {
 const $homeButton = document.querySelector(".to-home");
 const $productsButton = document.querySelector(".to-products");
 const $contactsButton = document.querySelector(".to-contacts");
-const $content = document.querySelector("#content");
+const $main = document.querySelector(".main");
 
 $homeButton.addEventListener('click', () => {
-  $content.replaceChildren(pages.$home);
+  $main.replaceChildren(pages.$home);
 });
 
 $productsButton.addEventListener('click', () => {
-  $content.replaceChildren(pages.$products);
+  $main.replaceChildren(pages.$products);
 });
 
 $contactsButton.addEventListener('click', () => {
-  $content.replaceChildren(pages.$contacts);
+  $main.replaceChildren(pages.$contacts);
 });

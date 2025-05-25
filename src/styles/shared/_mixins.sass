@@ -1,0 +1,20 @@
+=pixelified-corner($pixel-size)
+  clip-path: polygon(
+    $pixel-size 0,
+    $pixel-size * 2 0,
+    $pixel-size * 2 $pixel-size,
+    $pixel-size * 2 $pixel-size * 2,
+    $pixel-size $pixel-size * 2,
+    $pixel-size $pixel-size,
+    0 $pixel-size,
+    0 $pixel-size * 2,
+    $pixel-size $pixel-size * 2,
+    $pixel-size $pixel-size * 4,
+    0 $pixel-size * 4,
+    0 100%,
+    100% 100%,
+    100% 0,
+    $pixel-size * 3 0,
+    $pixel-size * 3 $pixel-size,
+    $pixel-size $pixel-size
+  )

@@ -1,0 +1,22 @@
+$header-height: 64px;
+  
+.page
+  position: relative
+  background-image: linear-gradient(rgb(0 0 0 / .5), rgba(0 0 0 / .5)), url('/images/stone-pattern.png')
+  flex-direction: column
+  min-height: 100%
+  padding-top: 64px + $header-height
+  padding-bottom: 64px
+
+
+.page__header
+  top: 0
+  height: $header-height
+  width: 100%
+  position: fixed
+  z-index: 999
+
+
+.page__main
+  margin-inline: auto
+  width: 1040px
