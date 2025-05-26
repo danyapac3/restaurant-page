@@ -2,35 +2,37 @@ $breakpoint-s: 575.98px
 $breakpoint-m: 767.98px 
 $breakpoint-l: 992.98px
 $breakpoint-xl: 1279.98px
-  
-=from-to($min:null, $max: null)
-  @if $min == 0 and $max == 0
-    @error "At least one parameter must be passed"
 
-  @else if $min == null
-    @media screen and (max-width: $max)
+
+=from($min)
+  @media screen and (min-width: $min)
       @content
 
-  @else if $max == null
-    @media screen and (min-width: $min)
+=to($max)
+  @media screen and (max-width: $max)
       @content
 
-  @else
-    @media screen and (max-width: $max) and (min-width: $min)
-      @content
+=between($min, $max)
+  @media screen and (max-width: $max) and (min-width: $min)
+    @content
+
 
 =media-s
-  +from-to(null, $breakpoint-s)
+  +to($breakpoint-s)
     @content
 
 =media-m
-  +from-to($breakpoint-s, $breakpoint-m)
+  +between($breakpoint-s, $breakpoint-m)
     @content
 
 =media-x
-  +from-to($breakpoint-m, $breakpoint-l)
+  +between($breakpoint-m, $breakpoint-l)
     @content
 
 =media-xl
-  +from-to($breakpoint-l, $breakpoint-xl)
+  between($breakpoint-l, $breakpoint-xl)
+    @content
+
+=media-xxl
+  from($breakpoint-xl)
     @content
