@@ -25,14 +25,14 @@ $breakpoint-xl: 1279.98px
   +between($breakpoint-s, $breakpoint-m)
     @content
 
-=media-x
+=media-l
   +between($breakpoint-m, $breakpoint-l)
     @content
 
 =media-xl
-  between($breakpoint-l, $breakpoint-xl)
+  +between($breakpoint-l, $breakpoint-xl)
     @content
 
 =media-xxl
-  from($breakpoint-xl)
+  +from($breakpoint-xl)
     @content
